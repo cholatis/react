@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux'; //applyMiddleware use with middleware such as ReduxThunk
+//applyMiddleware use with middleware such as ReduxThunk
+import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';

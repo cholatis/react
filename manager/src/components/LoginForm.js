@@ -9,7 +9,6 @@ class LoginForm extends Component {
   // Call Action Creator with new text
   onEmailChange(text) {
     this.props.emailChanged(text); //Action Creator return an action
-
   }
 
   onPasswordChange(text) {
@@ -23,7 +22,7 @@ class LoginForm extends Component {
   }
 
   renderButton() {
-    if(this.props.loading) {
+    if (this.props.loading) {
       return <Spinner size="large" />;
     }
 
@@ -36,25 +35,26 @@ class LoginForm extends Component {
   }
 
   render() {
-    return(
+    return (
       <Card>
         <CardSection>
           <Input
-            label = "Email"
+            label="Email"
             placeholder="email@gmail.com"
-            onChangeText={this.onEmailChange.bind(this)} //event handler to watch user type something
-            value = {this.props.email}
-            />
+            //event handler to watch user type something
+            onChangeText={this.onEmailChange.bind(this)}
+            value={this.props.email}
+          />
         </CardSection>
 
         <CardSection>
           <Input
             secureTextEntry
-            label = "Password"
-            placeholder = "password"
+            label="Password"
+            placeholder="password"
             onChangeText={this.onPasswordChange.bind(this)}
-            value = {this.props.password}
-            />
+            value={this.props.password}
+          />
         </CardSection>
 
         <Text style={styles.errorTextStyle}>
