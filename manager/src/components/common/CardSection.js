@@ -1,9 +1,19 @@
 import React from 'react';
 import { View } from 'react-native';
 
+/* Previously
 const CardSection = (props) => {
   return (
     <View style={styles.containerStyle}>
+      {props.children}
+    </View>
+  );
+};
+*/
+// to override style
+const CardSection = (props) => {
+  return (
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   );

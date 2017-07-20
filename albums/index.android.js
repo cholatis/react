@@ -1,53 +1,30 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+//Index.ios.js - place code in here for ios
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+// Import a library to help create a Component
+import React from 'react';
+//import ReactNative from 'react-native';
+import { View, AppRegistry } from 'react-native';
+import Header from './src/components/header';
+import AlbumList from './src/components/AlbumList';
 
-export default class albums extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+//Create a Component
+/*
+const App = () => {
+  return(
+    <Text>Some text</Text>
+  );
+};
+*/
+// flex: 1 for span entire list ScrollView
+const App = () => (
+  <View style={{ flex: 1 }}>
+    <Header headerText={'Albums!'} />
+    <AlbumList />
+  </View>
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('albums', () => albums);
+// Render it to the device
+// () => App
+// return function from App
+//ReactNative.AppRegistry.registerComponent('albums', () => App);
+AppRegistry.registerComponent('albums', () => App);
