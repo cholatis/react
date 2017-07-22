@@ -1,9 +1,10 @@
-import React from 'react';
+ import React from 'react';
 
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
+import EmployeeEdit from './components/EmployeeEdit';
 
 // attribute initial will display first scene
 //<Scene key="employeeList" component={EmployeeList} title="Employee" initial />
@@ -21,7 +22,7 @@ import EmployeeCreate from './components/EmployeeCreate';
 //  component={EmployeeList}
 //  title="Employee"  />
 const RouterComponent = () => {
-  return(
+  return (
     <Router sceneStyle={{ paddingTop: 65 }}>
       <Scene key="auth">
         <Scene key="login" component={LoginForm} title="Please Login" />
@@ -35,8 +36,9 @@ const RouterComponent = () => {
           component={EmployeeList}
           title="Employee"
           initial
-            />
+        />
         <Scene key="employeeCreate" component={EmployeeCreate} title="Create Employee" />
+        <Scene key="employeeEdit" component={EmployeeEdit} title="Edit Employee" />
       </Scene>
     </Router>
   );
